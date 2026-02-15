@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brand | Wholesale Marketplace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .tail-container { max-width: 1440px; margin: 0 auto; }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <!-- Top Bar -->
+    <div class="border-b">
+      <div class="tail-container px-8 py-3 flex items-center justify-between text-sm">
+        <div class="flex items-center gap-8">
+          <a href="#" class="flex items-center gap-2">
+            <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white">
+              <i class="fa-solid fa-bag-shopping text-2xl"></i>
+            </div>
+            <span class="text-2xl font-bold text-gray-900">Brand</span>
+          </a>
+        </div>
+
+        <!-- Search -->
+        <div class="flex-1 max-w-3xl mx-12">
+          <div class="relative flex">
+            <input 
+              type="text" 
+              placeholder="What are you looking for?" 
+              class="w-full border border-gray-300 rounded-l-2xl px-6 py-4 text-base focus:outline-none focus:border-blue-500"
+            />
+            <div class="border border-l-0 border-gray-300 bg-white rounded-r-2xl flex items-center px-4">
+              <select class="bg-transparent text-gray-600 font-medium focus:outline-none cursor-pointer">
+                <option>All category</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+                <option>Home & Garden</option>
+              </select>
+            </div>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-10 rounded-r-2xl font-semibold transition">
+              Search
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Icons -->
+        <div class="flex items-center gap-10">
+          <a href="#" class="flex flex-col items-center hover:text-blue-600 transition">
+            <i class="fa-regular fa-user text-2xl"></i>
+            <span class="text-xs mt-1">Profile</span>
+          </a>
+          <a href="#" class="flex flex-col items-center hover:text-blue-600 transition relative">
+            <i class="fa-regular fa-envelope text-2xl"></i>
+            <span class="text-xs mt-1">Message</span>
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">3</span>
+          </a>
+          <a href="#" class="flex flex-col items-center hover:text-blue-600 transition">
+            <i class="fa-regular fa-file-lines text-2xl"></i>
+            <span class="text-xs mt-1">Orders</span>
+          </a>
+          <a href="#" class="flex flex-col items-center hover:text-blue-600 transition relative">
+            <i class="fa-solid fa-cart-shopping text-2xl"></i>
+            <span class="text-xs mt-1">My cart</span>
+            <span class="absolute -top-1 -right-1 bg-green-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="tail-container px-8 py-4 flex items-center justify-between border-b">
+      <div class="flex items-center gap-10">
+        <!-- All Category Button -->
+        <button class="flex items-center gap-3 bg-gray-100 hover:bg-gray-200 px-6 py-3 rounded-2xl font-semibold transition">
+          <i class="fa-solid fa-bars text-xl"></i>
+          All category
+        </button>
+
+        <!-- Menu -->
+        <nav class="flex items-center gap-8 text-gray-700 font-medium">
+          <a href="#" class="hover:text-blue-600 transition">Hot offers</a>
+          <a href="#" class="hover:text-blue-600 transition">Gift boxes</a>
+          <a href="#" class="hover:text-blue-600 transition">Projects</a>
+          <a href="#" class="hover:text-blue-600 transition">Menu item</a>
+          <a href="#" class="hover:text-blue-600 transition">Help</a>
+        </nav>
+      </div>
+
+      <!-- Right Side -->
+      <div class="flex items-center gap-8 text-sm">
+        <div class="flex items-center gap-2 cursor-pointer">
+          <span>English</span>
+          <i class="fa-solid fa-chevron-down text-xs"></i>
+        </div>
+        <div class="flex items-center gap-2 cursor-pointer">
+          <span>USD</span>
+          <i class="fa-solid fa-chevron-down text-xs"></i>
+        </div>
+        <div class="flex items-center gap-3 cursor-pointer">
+          <span class="text-2xl">🇩🇪</span>
+          <div>
+            <div class="text-xs leading-none">Ship to</div>
+            <div class="font-medium">Germany</div>
+          </div>
+          <i class="fa-solid fa-chevron-down text-xs"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO / CONTENT (Placeholder) ==================== -->
+  <main class="tail-container px-8 py-10">
+    <h1 class="text-4xl font-bold text-center mb-10">Week 1 Complete ✅</h1>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto">
+      Header + Footer are 100% matched to the Figma design.<br>
+      You can now copy the header/footer into other pages.
+    </p>
+    <!-- Add your hero, categories, deals etc. here -->
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-white border-t">
+    <!-- Newsletter -->
+    <div class="bg-gray-50 py-12">
+      <div class="tail-container px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <h3 class="text-2xl font-semibold mb-2">Subscribe on our newsletter</h3>
+          <p class="text-gray-600 mb-6">Get daily news on upcoming offers from many suppliers all over the world</p>
+          <div class="flex max-w-md mx-auto">
+            <input type="email" placeholder="Your email address" class="flex-1 border border-r-0 border-gray-300 rounded-l-2xl px-6 py-4 focus:outline-none"/>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-10 rounded-r-2xl font-semibold">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer -->
+    <div class="tail-container px-8 py-16 grid grid-cols-6 gap-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white">
+            <i class="fa-solid fa-bag-shopping text-2xl"></i>
+          </div>
+          <span class="text-2xl font-bold">Brand</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Best information about the company gies but now lorem ipsum is
+        </p>
+        <div class="flex gap-4 mt-6">
+          <i class="fa-brands fa-facebook-f text-xl cursor-pointer hover:text-blue-600"></i>
+          <i class="fa-brands fa-twitter text-xl cursor-pointer hover:text-blue-600"></i>
+          <i class="fa-brands fa-linkedin-in text-xl cursor-pointer hover:text-blue-600"></i>
+          <i class="fa-brands fa-instagram text-xl cursor-pointer hover:text-blue-600"></i>
+        </div>
+      </div>
+
+      <!-- Columns -->
+      <div>
+        <h4 class="font-semibold mb-4">About</h4>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">About Us</a></li>
+          <li><a href="#" class="hover:text-gray-900">Find store</a></li>
+          <li><a href="#" class="hover:text-gray-900">Categories</a></li>
+          <li><a href="#" class="hover:text-gray-900">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Partnership</h4>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">About Us</a></li>
+          <li><a href="#" class="hover:text-gray-900">Find store</a></li>
+          <li><a href="#" class="hover:text-gray-900">Categories</a></li>
+          <li><a href="#" class="hover:text-gray-900">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Information</h4>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">Help Center</a></li>
+          <li><a href="#" class="hover:text-gray-900">Money Refund</a></li>
+          <li><a href="#" class="hover:text-gray-900">Shipping</a></li>
+          <li><a href="#" class="hover:text-gray-900">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">For users</h4>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">Login</a></li>
+          <li><a href="#" class="hover:text-gray-900">Register</a></li>
+          <li><a href="#" class="hover:text-gray-900">Settings</a></li>
+          <li><a href="#" class="hover:text-gray-900">My Orders</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Get app</h4>
+        <div class="space-y-4">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="App Store" class="h-10"/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" class="h-10"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bg-gray-900 text-white py-6">
+      <div class="tail-container px-8 flex items-center justify-between text-sm">
+        <div>© 2026 Ecommerce. All rights reserved.</div>
+        <div class="flex items-center gap-8">
+          <div class="flex items-center gap-2">
+            <span class="text-lg">🇺🇸</span>
+            <span>English</span>
+          </div>
+          <div class="flex items-center gap-2 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-medium">
+            <div class="w-5 h-5 bg-white rounded-full flex items-center justify-center text-green-600">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            S
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
