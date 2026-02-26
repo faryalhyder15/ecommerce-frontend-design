@@ -11,8 +11,8 @@ This is my **internship frontend project** — building a **B2B Wholesale Ecomme
 | Week | Status     | What’s Done                          | Date       |
 |------|------------|--------------------------------------|------------|
 | 1    | ✅ Done    | Header + Footer (Pixel Perfect)      | Feb 15, 2026 |
-| 2    | 🔄 In Progress | Hero, Categories, Deals section   | —          |
-| 3    | —          | Product pages, JS interactions       | —          |
+| 2    | ✅ Done | Hero, Categories, Deals section   | Feb 22, 2026 |
+| 3    | ✅ Done  | Product pages, JS interactions       | March 3,2026  |
 
 ---
 
