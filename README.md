@@ -48,31 +48,31 @@ This is my **internship frontend project** — building a **B2B Wholesale Ecomme
 ## ✨ Features Completed (Week 2)
 
 **Product Display**
--Dynamic product rendering from JavaScript array
--Grid view and List view toggle for better browsing experience
--Pagination to navigate through products
+- Dynamic product rendering from JavaScript array
+- Grid view and List view toggle for better browsing experience
+- Pagination to navigate through products
 
 **Filters & Sorting**
--Filter products by brand
--Filter products by price range
--Option to show only verified suppliers
--Sort products by price (Low → High, High → Low)
+- Filter products by brand
+- Filter products by price range
+- Option to show only verified suppliers
+- Sort products by price (Low → High, High → Low)
 
 **Interactive Dropdowns**
--Categories dropdown
--Help dropdown
--Language & Currency selector
--Shipping information dropdown
+- Categories dropdown
+- Help dropdown
+- Language & Currency selector
+- Shipping information dropdown
 
 **Responsive Design**
--Mobile-friendly sidebar menu
--Products layout adapts to screen size
--Hover effects and transitions for better UI
+- Mobile-friendly sidebar menu
+- Products layout adapts to screen size
+- Hover effects and transitions for better UI
 
 **Additional Features**
--Verified supplier labels on products
--Clear UI for no products found after filtering
--Easy-to-use buttons for switching views and applying filters
+- Verified supplier labels on products
+- Clear UI for no products found after filtering
+- Easy-to-use buttons for switching views and applying filters
 
 ---
 
