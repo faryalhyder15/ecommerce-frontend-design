@@ -1,0 +1,66 @@
+/* Base resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color scheme from image */
+:root {
+  --primary-blue: #0d6efd;
+  --teal-light: #d1fae5;
+  --orange-promo: #f97316;
+  --teal-promo: #14b8a6;
+  --red-discount: #f43f5e;
+  --pink-discount: #f43f5e;
+  --gray-bg: #f9fafb;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+}
+
+/* Animations */
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Hero background */
+.hero-bg {
+  background-color: var(--teal-light);
+}
+
+/* RFQ background */
+.rfq-bg {
+  background-color: var(--primary-blue);
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  z-index: 50;
+}
+
+/* Timer boxes */
+.timer-box {
+  background: white;
+  min-width: 50px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
