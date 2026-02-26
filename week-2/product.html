@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand - Product Listing</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-100">
+
+ <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-6">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+      </a>
+
+      <!-- Search -->
+      <form class="flex-1 max-w-xl hidden md:flex rounded-2xl overflow-hidden border-2 border-blue-600">
+        <input type="text" placeholder="Search" class="flex-1 px-6 py-4 focus:outline-none">
+        <select class="px-6 py-4 bg-white border-l-2 border-blue-600">
+          <option>All category</option>
+          <option>Electronics</option>
+          <option>Fashion</option>
+        </select>
+        <button class="bg-blue-600 text-white px-10 font-semibold">Search</button>
+      </form>
+
+      <!-- Icons -->
+      <div class="flex items-center gap-6 md:gap-8 text-gray-600">
+        <button id="mobile-menu-toggle" class="md:hidden text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600">
+          <i class="far fa-user text-2xl"></i>
+          <span class="text-xs mt-1">Profile</span>
+        </a>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600 relative">
+          <i class="far fa-envelope text-2xl"></i>
+          <span class="text-xs mt-1">Message</span>
+          <span class="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">3</span>
+        </a>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600">
+          <i class="far fa-file-lines text-2xl"></i>
+          <span class="text-xs mt-1">Orders</span>
+        </a>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600 relative">
+          <i class="fas fa-cart-shopping text-2xl"></i>
+          <span class="text-xs mt-1">My cart</span>
+          <span class="absolute -top-1 -right-2 bg-green-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">2</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Secondary Nav -->
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-3 border-t flex items-center justify-between text-gray-700 font-medium">
+      <div class="flex items-center gap-6">
+        <!-- All categories dropdown -->
+        <div class="relative">
+          <button class="flex items-center gap-2 hover:text-blue-600" id="all-categories-toggle">
+            <i class="fas fa-bars text-xl"></i> All category <i class="fas fa-chevron-down text-xs"></i>
+          </button>
+          <div id="all-categories-menu" class="absolute top-full left-0 bg-white border rounded-xl shadow-lg p-4 w-64 hidden">
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Automobiles</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Clothes and wear</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Home interiors</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Computer and tech</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Tools, equipments</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Sports and outdoor</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Animal and pets</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Machinery tools</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">More</a>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex gap-6">
+          <a href="#" class="hover:text-blue-600">Hot offers</a>
+          <a href="#" class="hover:text-blue-600">Gift boxes</a>
+          <a href="#" class="hover:text-blue-600">Projects</a>
+          <a href="#" class="hover:text-blue-600">Menu item</a>
+          <!-- Help dropdown -->
+          <div class="relative">
+            <button class="hover:text-blue-600 flex items-center gap-1" id="help-toggle">
+              Help <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div id="help-menu" class="absolute top-full right-0 bg-white border rounded-xl shadow-lg p-4 w-48 hidden">
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Contact us</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Support</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Terms</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <!-- Languages/Currencies dropdown -->
+        <div class="relative">
+          <button class="flex items-center gap-1 hover:text-blue-600" id="lang-currency-toggle">
+            English, USD <i class="fas fa-chevron-down text-xs"></i>
+          </button>
+          <div id="lang-currency-menu" class="absolute top-full right-0 bg-white border rounded-xl shadow-lg p-4 w-48 hidden">
+            <div class="mb-4">
+              <p class="font-semibold mb-2">Language</p>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Spanish</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">French</a>
+            </div>
+            <div>
+              <p class="font-semibold mb-2">Currency</p>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">USD</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">EUR</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">GBP</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping dropdown with flags -->
+        <div class="relative">
+          <button class="flex items-center gap-2 hover:text-blue-600" id="shipping-toggle">
+            <img src="assets/Layout1/Image/flags/icon.png" alt="Germany" class="w-6 h-4"> Ship to <i class="fas fa-chevron-down text-xs"></i>
+          </button>
+          <div id="shipping-menu" class="absolute top-full right-0 bg-white border rounded-xl shadow-lg p-4 w-64 hidden">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2">
+              <img src="assets/Layout1/Image/flags/AE@2x.png" alt="AE" class="w-6 h-4"> Arab-Emirates
+            </a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2">
+              <img src="assets/Layout1/Image/flags/CN@2x.png" alt="Canada" class="w-6 h-4"> China
+            </a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2">
+              <img src="assets/Layout1/Image/flags/IT@2x.png" alt="Italy" class="w-6 h-4"> Italy
+            </a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2">
+              <img src="assets/Layout1/Image/flags/RU@2x.png" alt="Russia" class="w-6 h-4"> Russia
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar -->
+  <aside id="mobile-sidebar" class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+    <button id="mobile-close" class="absolute top-4 right-4 text-2xl text-gray-600">
+      <i class="fas fa-times"></i>
+    </button>
+    <nav class="p-6 space-y-4 mt-16">
+      <a href="#" class="block hover:text-blue-600">Hot offers</a>
+      <a href="#" class="block hover:text-blue-600">Gift boxes</a>
+      <a href="#" class="block hover:text-blue-600">Projects</a>
+      <a href="#" class="block hover:text-blue-600">Menu item</a>
+      <a href="#" class="block hover:text-blue-600">Help</a>
+      <hr>
+      <a href="#" class="block hover:text-blue-600">English, USD</a>
+      <a href="#" class="block hover:text-blue-600 flex items-center gap-2">
+        <img src="assets/Layout1/Image/flags/US@2x.png" alt="united-states" class="w-6 h-4"> Ship to
+      </a>
+    </nav>
+  </aside>
+
+
+<!-- MAIN -->
+<main class="max-w-7xl mx-auto px-4 md:px-8 py-8 flex gap-8">
+
+<!-- ================= LEFT FILTER ================= -->
+<aside class="w-72 hidden lg:block bg-white p-6 rounded-2xl h-fit text-sm">
+
+  <!-- CATEGORY -->
+  <div class="border-b pb-5">
+    <div class="flex justify-between items-center mb-3">
+      <h3 class="font-semibold">Category</h3>
+      <i class="fas fa-chevron-up text-xs"></i>
+    </div>
+
+    <div class="space-y-2 text-gray-600">
+      <a href="#" class="block hover:text-blue-600">Mobile accessory</a>
+      <a href="#" class="block hover:text-blue-600">Electronics</a>
+      <a href="#" class="block hover:text-blue-600">Smartphones</a>
+      <a href="#" class="block hover:text-blue-600">Modern tech</a>
+      <a href="#" class="text-blue-600 text-xs">See all</a>
+    </div>
+  </div>
+
+
+  <!-- BRANDS -->
+  <div class="border-b py-5">
+    <div class="flex justify-between items-center mb-3">
+      <h3 class="font-semibold">Brands</h3>
+      <i class="fas fa-chevron-up text-xs"></i>
+    </div>
+
+    <div class="space-y-2 text-gray-600">
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="brand accent-blue-600">
+        Samsung
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="brand accent-blue-600">
+        Apple
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="brand accent-blue-600">
+        Huawei
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="brand accent-blue-600">
+        Poco
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="brand accent-blue-600">
+        Lenovo
+      </label>
+
+      <a href="#" class="text-blue-600 text-xs block mt-2">See all</a>
+    </div>
+  </div>
+
+
+  <!-- FEATURES -->
+  <div class="border-b py-5">
+    <div class="flex justify-between items-center mb-3">
+      <h3 class="font-semibold">Features</h3>
+      <i class="fas fa-chevron-up text-xs"></i>
+    </div>
+
+    <div class="space-y-2 text-gray-600">
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="accent-blue-600">
+        Metallic
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="accent-blue-600">
+        Plastic cover
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="accent-blue-600">
+        8GB Ram
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="accent-blue-600">
+        Super power
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="accent-blue-600">
+        Large Memory
+      </label>
+
+      <a href="#" class="text-blue-600 text-xs block mt-2">See all</a>
+    </div>
+  </div>
+
+
+  <!-- PRICE RANGE -->
+  <div class="border-b py-5">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="font-semibold">Price range</h3>
+      <i class="fas fa-chevron-up text-xs"></i>
+    </div>
+
+    <!-- Range Slider -->
+    <input type="range" min="0" max="999999" class="w-full accent-blue-600 mb-4">
+
+    <div class="flex gap-2 mb-3">
+      <input type="number" placeholder="Min" class="border rounded px-2 py-1 w-1/2 text-xs">
+      <input type="number" placeholder="Max" class="border rounded px-2 py-1 w-1/2 text-xs">
+    </div>
+
+    <button class="border border-blue-600 text-blue-600 w-full py-2 rounded-lg text-xs hover:bg-blue-600 hover:text-white transition">
+      Apply
+    </button>
+  </div>
+
+
+  <!-- CONDITION -->
+  <div class="border-b py-5">
+    <div class="flex justify-between items-center mb-3">
+      <h3 class="font-semibold">Condition</h3>
+      <i class="fas fa-chevron-up text-xs"></i>
+    </div>
+
+    <div class="space-y-2 text-gray-600">
+      <label class="flex items-center gap-2">
+        <input type="radio" name="condition" checked class="accent-blue-600">
+        Any
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="radio" name="condition" class="accent-blue-600">
+        Refurbished
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="radio" name="condition" class="accent-blue-600">
+        Brand new
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="radio" name="condition" class="accent-blue-600">
+        Old items
+      </label>
+    </div>
+  </div>
+
+
+  <!-- RATINGS -->
+  <div class="pt-5">
+    <div class="flex justify-between items-center mb-3">
+      <h3 class="font-semibold">Ratings</h3>
+      <i class="fas fa-chevron-up text-xs"></i>
+    </div>
+
+    <div class="space-y-2 text-yellow-400">
+      <label class="flex items-center gap-2 text-gray-600">
+        <input type="checkbox" class="accent-blue-600">
+        <span>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+        </span>
+      </label>
+
+      <label class="flex items-center gap-2 text-gray-600">
+        <input type="checkbox" class="accent-blue-600">
+        <span>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="far fa-star text-yellow-400"></i>
+        </span>
+      </label>
+
+      <label class="flex items-center gap-2 text-gray-600">
+        <input type="checkbox" class="accent-blue-600">
+        <span>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="far fa-star text-yellow-400"></i>
+          <i class="far fa-star text-yellow-400"></i>
+        </span>
+      </label>
+    </div>
+  </div>
+
+</aside>
+
+<!-- ================= RIGHT CONTENT ================= -->
+<div class="flex-1">
+
+<!-- TOP BAR -->
+<div class="flex justify-between items-center bg-white p-4 rounded-2xl mb-6">
+<p class="text-sm">
+<span id="totalCount" class="font-bold">0</span> items found
+</p>
+
+<div class="flex items-center gap-4 text-sm">
+
+<label class="flex items-center gap-1">
+<input type="checkbox" id="verifiedOnly">
+Verified only
+</label>
+
+<select id="sortSelect" class="border rounded-lg px-3 py-1">
+<option value="featured">Featured</option>
+<option value="low">Price low to high</option>
+<option value="high">Price high to low</option>
+</select>
+
+<div class="flex border rounded-lg overflow-hidden">
+<button id="listView" class="px-3 py-1 bg-blue-600 text-white">
+<i class="fas fa-bars"></i>
+</button>
+<button id="gridView" class="px-3 py-1">
+<i class="fas fa-th"></i>
+</button>
+</div>
+
+</div>
+</div>
+
+<!-- PRODUCT CONTAINER -->
+<div id="productContainer"
+     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+</div>
+
+<!-- PAGINATION -->
+<div id="pagination" class="flex justify-center mt-10 gap-2"></div>
+
+</div>
+</main>
+      <!-- Newsletter -->
+      <section class="bg-gray-100 py-16 text-center rounded-2xl">
+        <h2 class="text-3xl font-semibold mb-3">Subscribe on our newsletter</h2>
+        <p class="text-gray-600 mb-6">
+             Get daily news on upcoming offers from many suppliers all over the world
+        </p>
+        <form class="max-w-lg mx-auto flex shadow">
+         <input type="email" placeholder="Email"
+           class="flex-1 px-6 py-3 rounded-l-lg border focus:outline-none">
+            <button class="bg-blue-600 text-white px-6 rounded-r-lg">
+                Subscribe
+            </button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-12 grid grid-cols-2 md:grid-cols-6 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <a href="index.html" class="flex items-center gap-2 mb-4">
+          <img src="assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+        
+        </a>
+        <p class="text-gray-600 text-sm mb-6">Best information about the company gies here but now lorem ipsum is</p>
+        <div class="flex gap-4 text-xl">
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">About</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">About Us</a></li>
+          <li><a href="#" class="hover:text-gray-900">Find store</a></li>
+          <li><a href="#" class="hover:text-gray-900">Categories</a></li>
+          <li><a href="#" class="hover:text-gray-900">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">Partnership</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">About Us</a></li>
+          <li><a href="#" class="hover:text-gray-900">Find store</a></li>
+          <li><a href="#" class="hover:text-gray-900">Categories</a></li>
+          <li><a href="#" class="hover:text-gray-900">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">Information</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">Help Center</a></li>
+          <li><a href="#" class="hover:text-gray-900">Money Refund</a></li>
+          <li><a href="#" class="hover:text-gray-900">Shipping</a></li>
+          <li><a href="#" class="hover:text-gray-900">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">For users</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">Login</a></li>
+          <li><a href="#" class="hover:text-gray-900">Register</a></li>
+          <li><a href="#" class="hover:text-gray-900">Settings</a></li>
+          <li><a href="#" class="hover:text-gray-900">My Orders</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">Get app</h3>
+        <div class="space-y-2">
+          <a href="#" class="block"><img src="assets/Layout/Misc/market-button.png" alt="App Store"></a>
+          <a href="#" class="block"><img src="assets/Layout/Misc/Group.png" alt="Google Play"></a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-900 text-white py-6 text-center text-sm">
+      © 2023 Ecommerce. All rights reserved.
+    </div>
+  </footer>
+<script src="js/script.js"></script>
+</body>
+</html>
