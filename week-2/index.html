@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-6">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+      </a>
+
+      <!-- Search -->
+      <form class="flex-1 max-w-xl hidden md:flex rounded-2xl overflow-hidden border-2 border-blue-600">
+        <input type="text" placeholder="Search" class="flex-1 px-6 py-4 focus:outline-none">
+        <select class="px-6 py-4 bg-white border-l-2 border-blue-600">
+          <option>All category</option>
+          <option>Electronics</option>
+          <option>Fashion</option>
+        </select>
+        <button class="bg-blue-600 text-white px-10 font-semibold">Search</button>
+      </form>
+
+      <!-- Icons -->
+      <div class="flex items-center gap-6 md:gap-8 text-gray-600">
+        <button id="mobile-menu-toggle" class="md:hidden text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600">
+          <i class="far fa-user text-2xl"></i>
+          <span class="text-xs mt-1">Profile</span>
+        </a>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600 relative">
+          <i class="far fa-envelope text-2xl"></i>
+          <span class="text-xs mt-1">Message</span>
+          <span class="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">3</span>
+        </a>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600">
+          <i class="far fa-file-lines text-2xl"></i>
+          <span class="text-xs mt-1">Orders</span>
+        </a>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600 relative">
+          <i class="fas fa-cart-shopping text-2xl"></i>
+          <span class="text-xs mt-1">My cart</span>
+          <span class="absolute -top-1 -right-2 bg-green-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">2</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Secondary Nav -->
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-3 border-t flex items-center justify-between text-gray-700 font-medium">
+      <div class="flex items-center gap-6">
+        <!-- All categories dropdown -->
+        <div class="relative">
+          <button class="flex items-center gap-2 hover:text-blue-600" id="all-categories-toggle">
+            <i class="fas fa-bars text-xl"></i> All category <i class="fas fa-chevron-down text-xs"></i>
+          </button>
+          <div id="all-categories-menu" class="absolute top-full left-0 bg-white border rounded-xl shadow-lg p-4 w-64 hidden">
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Automobiles</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Clothes and wear</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Home interiors</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Computer and tech</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Tools, equipments</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Sports and outdoor</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Animal and pets</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">Machinery tools</a>
+            <a href="product.html" class="block px-4 py-2 hover:bg-gray-100">More</a>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex gap-6">
+          <a href="#" class="hover:text-blue-600">Hot offers</a>
+          <a href="#" class="hover:text-blue-600">Gift boxes</a>
+          <a href="#" class="hover:text-blue-600">Projects</a>
+          <a href="#" class="hover:text-blue-600">Menu item</a>
+          <!-- Help dropdown -->
+          <div class="relative">
+            <button class="hover:text-blue-600 flex items-center gap-1" id="help-toggle">
+              Help <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div id="help-menu" class="absolute top-full right-0 bg-white border rounded-xl shadow-lg p-4 w-48 hidden">
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Contact us</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Support</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Terms</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <!-- Languages/Currencies dropdown -->
+        <div class="relative">
+          <button class="flex items-center gap-1 hover:text-blue-600" id="lang-currency-toggle">
+            English, USD <i class="fas fa-chevron-down text-xs"></i>
+          </button>
+          <div id="lang-currency-menu" class="absolute top-full right-0 bg-white border rounded-xl shadow-lg p-4 w-48 hidden">
+            <div class="mb-4">
+              <p class="font-semibold mb-2">Language</p>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Spanish</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">French</a>
+            </div>
+            <div>
+              <p class="font-semibold mb-2">Currency</p>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">USD</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">EUR</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">GBP</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping dropdown with flags -->
+        <div class="relative">
+          <button class="flex items-center gap-2 hover:text-blue-600" id="shipping-toggle">
+            <img src="assets/Layout1/Image/flags/icon.png" alt="Germany" class="w-6 h-4"> Ship to <i class="fas fa-chevron-down text-xs"></i>
+          </button>
+          <div id="shipping-menu" class="absolute top-full right-0 bg-white border rounded-xl shadow-lg p-4 w-64 hidden">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2">
+              <img src="assets/Layout1/Image/flags/AE@2x.png" alt="AE" class="w-6 h-4"> Arab-Emirates
+            </a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2">
+              <img src="assets/Layout1/Image/flags/CN@2x.png" alt="Canada" class="w-6 h-4"> China
+            </a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2">
+              <img src="assets/Layout1/Image/flags/IT@2x.png" alt="Italy" class="w-6 h-4"> Italy
+            </a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2">
+              <img src="assets/Layout1/Image/flags/RU@2x.png" alt="Russia" class="w-6 h-4"> Russia
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar -->
+  <aside id="mobile-sidebar" class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+    <button id="mobile-close" class="absolute top-4 right-4 text-2xl text-gray-600">
+      <i class="fas fa-times"></i>
+    </button>
+    <nav class="p-6 space-y-4 mt-16">
+      <a href="#" class="block hover:text-blue-600">Hot offers</a>
+      <a href="#" class="block hover:text-blue-600">Gift boxes</a>
+      <a href="#" class="block hover:text-blue-600">Projects</a>
+      <a href="#" class="block hover:text-blue-600">Menu item</a>
+      <a href="#" class="block hover:text-blue-600">Help</a>
+      <hr>
+      <a href="#" class="block hover:text-blue-600">English, USD</a>
+      <a href="#" class="block hover:text-blue-600 flex items-center gap-2">
+        <img src="assets/Layout1/Image/flags/US@2x.png" alt="united-states" class="w-6 h-4"> Ship to
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="max-w-[1280px] mx-auto px-6 py-10 flex gap-10">
+    <!-- Main Sections -->
+    <div class="flex-1 space-y-16">
+      <!-- Hero -->
+      <section class="bg-white rounded-2xl p-6 flex gap-6">
+
+  <!-- LEFT: Categories -->
+  <div class="w-60 hidden lg:block">
+    <ul class="space-y-2 text-gray-700">
+      <li class="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg">Automobiles</li>
+      <li class="hover:bg-gray-100 px-4 py-2 rounded-lg">Clothes and wear</li>
+      <li class="hover:bg-gray-100 px-4 py-2 rounded-lg">Home interiors</li>
+      <li class="hover:bg-gray-100 px-4 py-2 rounded-lg">Computer and tech</li>
+      <li class="hover:bg-gray-100 px-4 py-2 rounded-lg">Tools, equipments</li>
+      <li class="hover:bg-gray-100 px-4 py-2 rounded-lg">Sports and outdoor</li>
+      <li class="hover:bg-gray-100 px-4 py-2 rounded-lg">Animal and pets</li>
+      <li class="hover:bg-gray-100 px-4 py-2 rounded-lg">Machinery tools</li>
+      <li class="hover:bg-gray-100 px-4 py-2 rounded-lg">More</li>
+    </ul>
+  </div>
+
+  <!-- CENTER: Banner -->
+  <div class="flex-1 bg-[#e6f4f1] rounded-2xl p-10 relative overflow-hidden flex items-center">
+    
+    <div class="z-10 max-w-md">
+      <h2 class="text-4xl font-bold leading-snug">
+        Latest trending <br> Electronic items
+      </h2>
+      <button class="mt-6 bg-white px-6 py-3 rounded-lg font-semibold shadow">
+        Learn more
+      </button>
+    </div>
+
+    <img src="assets/Image/backgrounds/Banner-board-800x420 2.png"
+         class="absolute right-0 bottom-0 h-full object-contain"
+         alt="Banner">
+  </div>
+
+  <!-- RIGHT: Small Cards -->
+  <div class="w-64 space-y-4">
+
+    <div class="bg-blue-100 p-4 rounded-xl">
+      <p class="text-sm">Hi, user</p>
+      <p class="font-semibold mb-3">Let's get started</p>
+      <button class="w-full bg-blue-600 text-white py-2 rounded-lg mb-2">Join now</button>
+      <button class="w-full border py-2 rounded-lg">Log in</button>
+    </div>
+
+    <div class="bg-orange-500 text-white p-4 rounded-xl text-sm">
+      Get US $10 off with a new supplier
+    </div>
+
+    <div class="bg-teal-500 text-white p-4 rounded-xl text-sm">
+      Send quotes with supplier preferences
+    </div>
+
+  </div>
+
+</section>
+  <!-- Deals and offers -->
+<section class="bg-white rounded-2xl p-6">
+  <div class="grid grid-cols-1 md:grid-cols-6 gap-6 items-center">
+
+    <!-- LEFT INFO BOX -->
+    <div class="md:col-span-1">
+      <h2 class="text-xl font-bold mb-2">Deals and offers</h2>
+      <p class="text-gray-500 text-sm mb-4">Hygiene equipments</p>
+
+      <div class="grid grid-cols-2 gap-2 text-center text-sm">
+        <div class="bg-gray-100 rounded-lg p-2">
+          <p class="font-bold">04</p>
+          <span class="text-gray-500 text-xs">Days</span>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-2">
+          <p class="font-bold">13</p>
+          <span class="text-gray-500 text-xs">Hour</span>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-2">
+          <p class="font-bold">34</p>
+          <span class="text-gray-500 text-xs">Min</span>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-2">
+          <p class="font-bold">56</p>
+          <span class="text-gray-500 text-xs">Sec</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="md:col-span-5 grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="text-center">
+        <img src="assets/Image/tech/8.png" class="mx-auto h-28 object-contain">
+        <p class="text-sm mt-2">Smart watches</p>
+        <span class="text-red-500 text-xs font-semibold">-25%</span>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/Image/tech/image 34.png" class="mx-auto h-28 object-contain">
+        <p class="text-sm mt-2">Laptops</p>
+        <span class="text-red-500 text-xs font-semibold">-15%</span>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/Image/tech/6.png" class="mx-auto h-28 object-contain">
+        <p class="text-sm mt-2">GoPro cameras</p>
+        <span class="text-red-500 text-xs font-semibold">-40%</span>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/Image/tech/image 29.png" class="mx-auto h-28 object-contain">
+        <p class="text-sm mt-2">Headphones</p>
+        <span class="text-red-500 text-xs font-semibold">-25%</span>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/Image/tech/image 23.png" class="mx-auto h-28 object-contain">
+        <p class="text-sm mt-2">Mobile phones</p>
+        <span class="text-red-500 text-xs font-semibold">-17%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+     <!-- Home and outdoor -->
+<section class="bg-white rounded-2xl p-6">
+
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+
+    <!-- LEFT PROMO CARD -->
+    <div class="md:col-span-1 bg-[#f3f6f9] rounded-2xl p-6 flex flex-col justify-between">
+
+      <div>
+        <h2 class="text-lg font-bold mb-2 leading-snug">
+          Home and <br> outdoor
+        </h2>
+
+        <a href="product.html">
+          <button class="mt-3 bg-white border px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition">
+            Source now
+          </button>
+        </a>
+      </div>
+
+      <img src="assets/Image/backgrounds/Group 969.png"
+           alt="Home and outdoor"
+           class="mt-6 h-32 object-contain mx-auto">
+    </div>
+
+
+    <!-- RIGHT PRODUCTS GRID -->
+    <div class="md:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-6">
+
+      <!-- Product 1 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/interior/1.png"
+             alt="Soft chairs"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Soft chairs</p>
+        <p class="text-xs text-gray-500">From USD 19</p>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/interior/6.png"
+             alt="Kitchen mixer"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Kitchen mixer</p>
+        <p class="text-xs text-gray-500">From USD 100</p>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/interior/image 93.png"
+             alt="Kitchen dishes"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Kitchen dishes</p>
+        <p class="text-xs text-gray-500">From USD 34</p>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/interior/3.png"
+             alt="Coffee table"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Coffee table</p>
+        <p class="text-xs text-gray-500">From USD 50</p>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/interior/8.png"
+             alt="Coffee maker"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Coffee maker</p>
+        <p class="text-xs text-gray-500">From USD 124</p>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/interior/9.png"
+             alt="Blenders"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Blenders</p>
+        <p class="text-xs text-gray-500">From USD 39</p>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/interior/7.png"
+             alt="Kitchen rack"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Kitchen rack</p>
+        <p class="text-xs text-gray-500">From USD 200</p>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/interior/image 89.png"
+             alt="Home decorations"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Home decorations</p>
+        <p class="text-xs text-gray-500">From USD 7</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- Consumer electronics and gadgets -->
+<section class="bg-white rounded-2xl p-6">
+  
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+    
+    <!-- LEFT SIDE PROMO CARD -->
+    <div class="md:col-span-1 bg-[#f3f6f9] rounded-2xl p-6 flex flex-col justify-between">
+      
+      <div>
+        <h2 class="text-lg font-bold mb-2 leading-snug">
+          Consumer electronics <br> and gadgets
+        </h2>
+
+        <button class="mt-3 bg-white border px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition">
+          Source now
+        </button>
+      </div>
+
+      <img src="assets/Image/backgrounds/image 98.png"
+           alt="Electronics"
+           class="mt-6 h-32 object-contain mx-auto">
+    </div>
+
+
+    <!-- RIGHT SIDE PRODUCTS GRID -->
+    <div class="md:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-6">
+
+      <!-- Product 1 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/tech/8.png"
+             alt="Smart watches"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Smart watches</p>
+        <p class="text-xs text-gray-500">From USD 19</p>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/tech/6.png"
+             alt="Cameras"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Cameras</p>
+        <p class="text-xs text-gray-500">From USD 89</p>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/tech/image 86.png"
+             alt="Headphones"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Headphones</p>
+        <p class="text-xs text-gray-500">From USD 10</p>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/tech/image 29.png"
+             alt="Gaming set"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Gaming set</p>
+        <p class="text-xs text-gray-500">From USD 35</p>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/tech/image 34.png"
+             alt="Laptops & PC"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Laptops & PC</p>
+        <p class="text-xs text-gray-500">From USD 340</p>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/tech/image 33.png"
+             alt="Smartphones"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Smartphones</p>
+        <p class="text-xs text-gray-500">From USD 19</p>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/tech/image 85.png"
+             alt="Electric kettle"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Electric kettle</p>
+        <p class="text-xs text-gray-500">From USD 240</p>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="text-center bg-white p-4 rounded-xl hover:shadow-md transition">
+        <img src="assets/Image/tech/7.png"
+             alt="Tablet devices"
+             class="mx-auto h-24 object-contain">
+        <p class="text-sm mt-3 font-medium">Tablet devices</p>
+        <p class="text-xs text-gray-500">From USD 120</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+      <!-- RFQ Banner -->
+<section class="rounded-3xl p-10 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+    <!-- LEFT TEXT -->
+    <div>
+      <img src="assets/Image/backgrounds/Group 982.png" width="w-full" height="h-full"/>
+      <h2 class="text-3xl font-bold mb-4">
+        An easy way to send requests to all suppliers
+      </h2>
+      <p class="text-blue-100">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <form class="bg-white text-gray-800 p-6 rounded-2xl shadow-lg">
+      <input type="text"
+        placeholder="What item do you need?"
+        class="w-full border rounded-lg px-4 py-2 mb-4">
+
+      <textarea rows="3"
+        placeholder="Type more details"
+        class="w-full border rounded-lg px-4 py-2 mb-4"></textarea>
+
+      <div class="flex gap-3 mb-4">
+        <input type="number"
+          placeholder="Quantity"
+          class="flex-1 border rounded-lg px-4 py-2">
+
+        <select class="border rounded-lg px-4 py-2">
+          <option>Pcs</option>
+          <option>Kg</option>
+        </select>
+      </div>
+
+      <button class="bg-blue-600 text-white w-full py-2 rounded-lg">
+        Send inquiry
+      </button>
+    </form>
+
+  </div>
+</section>
+
+      <!-- Recommended Items -->
+       <div class="flex justify-end gap-2 mb-4">
+  <button id="grid-view-btn" class="px-3 py-1 bg-blue-600 text-white rounded">Grid View</button>
+  <button id="list-view-btn" class="px-3 py-1 border rounded">List View</button>
+</div>
+
+<div id="products-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+  <!-- Products will render here dynamically -->
+</div>
+      <section>
+        <h2 class="text-3xl font-bold mb-6">Recommended items</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <div class="card bg-white">
+            <img src="assets/Layout/alibaba/Image/cloth/Bitmap.png " alt="T-shirts" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">T-shirts with multiple colors, for men</p>
+              <p class="text-xl font-bold">$10.30</p>
+            </div>
+          </div>
+          <div class="card bg-white">
+            <img src="assets/Layout/alibaba/Image/cloth/Bitmap (2).png " alt="Jeans shorts" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">Jeans shorts for men blue color</p>
+              <p class="text-xl font-bold">$10.30</p>
+            </div>
+          </div>
+          <div class="card bg-white">
+            <img src="assets/Layout/alibaba/Image/cloth/2 1.png" alt="Brown winter coat" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">Brown winter coat medium size</p>
+              <p class="text-xl font-bold">$12.50</p>
+            </div>
+          </div>
+          <div class="card bg-white">
+            <img src="assets/Layout/alibaba/Image/cloth/image 26.png" alt="Jeans bag" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">Jeans bag for travel for men</p>
+              <p class="text-xl font-bold">$34.00</p>
+            </div>
+          </div>
+          <div class="card bg-white">
+            <img src="assets/Layout/alibaba/Image/cloth/image 24.png" alt="Leather wallet" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">Leather wallet</p>
+              <p class="text-xl font-bold">$99.00</p>
+            </div>
+          </div>
+          <div class="card bg-white">
+            <img src="assets/Image/tech/6.png" alt="Canon camera" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">Canon camera black, 100x zoom</p>
+              <p class="text-xl font-bold">$9.99</p>
+            </div>
+          </div>
+          <div class="card bg-white">
+            <img src="assets/Image/tech/image 29.png" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">Headset for gaming with mic</p>
+              <p class="text-xl font-bold">$8.99</p>
+            </div>
+          </div> 
+          <div class="card bg-white">
+            <img src="assets/Image/tech/8.png" alt="Smartwatch silver" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">Smartwatch silver color modern</p>
+              <p class="text-xl font-bold">$10.30</p>
+            </div>
+          </div>
+          <div class="card bg-white">
+            <img src="assets/Image/tech/image 86.png" alt="White-headset" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">White headset</p>
+              <p class="text-xl font-bold">$10.30</p>
+            </div>
+          </div>
+          <div class="card bg-white">
+            <img src="assets/Image/tech/image 33.png" alt="i phone11" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <p class="font-medium">i Phone11</p>
+              <p class="text-xl font-bold">$80.95</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Extra Services -->
+      <section>
+        <h2 class="text-3xl font-bold mb-6">Our extra services</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="card bg-white p-4 text-center">
+            <img src="assets/Image/backgrounds/Mask group.png" alt="Industry Hubs" class="mx-auto h-40 object-cover rounded-2xl mb-4">
+            <p class="font-medium">Source from<br>Industry Hubs</p>
+          </div>
+          <div class="card bg-white p-4 text-center">
+            <img src="assets/Image/backgrounds/Mask group (1).png" alt="Customize Products" class="mx-auto h-40 object-cover rounded-2xl mb-4">
+            <p class="font-medium">Customize Your<br>Products</p>
+          </div>
+          <div class="card bg-white p-4 text-center">
+            <img src="assets/Image/backgrounds/image 106.png" alt="Shipping" class="mx-auto h-40 object-cover rounded-2xl mb-4">
+            <p class="font-medium">Fast, reliable shipping<br>by ocean or air</p>
+          </div>
+          <div class="card bg-white p-4 text-center">
+            <img src="assets/Image/backgrounds/image 107.png" alt="Monitoring" class="mx-auto h-40 object-cover rounded-2xl mb-4">
+            <p class="font-medium">Product monitoring<br>and inspection</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Suppliers by Region -->
+      <section>
+        <h2 class="text-3xl font-bold mb-6">Suppliers by region</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+          <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+            <img src="assets/Layout1/Image/flags/AE@2x.png" alt="Arab Emirates">
+            Arab Emirates
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+            <img src="assets/Layout1/Image/flags/DE@2x.png" alt="Germany">
+            Germany
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+            <img src="assets/Layout1/Image/flags/US@2x.png" alt="United States">
+            United States
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+            <img src="assets/Layout1/Image/flags/RU@2x.png" alt="Russia" >
+            Russia
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+            <img src="assets/Layout1/Image/flags/IT@2x.png" alt="Italy">
+            Italy
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+            <img src="assets/Layout1/Image/flags/DK@2x.png" alt="Denmark" >
+            Denmark
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+            <img src="assets/Layout1/Image/flags/FR@2x.png" alt="France" >
+            France
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+            <img src="assets/Layout1/Image/flags/CN@2x.png" alt="China" >
+            China
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+            <img src="assets/Layout1/Image/flags/GB@2x.png" alt="Great Britain">
+            Great Britain
+          </a>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="bg-gray-100 py-16 text-center rounded-2xl">
+        <h2 class="text-3xl font-semibold mb-3">Subscribe on our newsletter</h2>
+        <p class="text-gray-600 mb-6">
+             Get daily news on upcoming offers from many suppliers all over the world
+        </p>
+        <form class="max-w-lg mx-auto flex shadow">
+         <input type="email" placeholder="Email"
+           class="flex-1 px-6 py-3 rounded-l-lg border focus:outline-none">
+            <button class="bg-blue-600 text-white px-6 rounded-r-lg">
+                Subscribe
+            </button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-12 grid grid-cols-2 md:grid-cols-6 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <a href="index.html" class="flex items-center gap-2 mb-4">
+          <img src="assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+        
+        </a>
+        <p class="text-gray-600 text-sm mb-6">Best information about the company gies here but now lorem ipsum is</p>
+        <div class="flex gap-4 text-xl">
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">About</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">About Us</a></li>
+          <li><a href="#" class="hover:text-gray-900">Find store</a></li>
+          <li><a href="#" class="hover:text-gray-900">Categories</a></li>
+          <li><a href="#" class="hover:text-gray-900">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">Partnership</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">About Us</a></li>
+          <li><a href="#" class="hover:text-gray-900">Find store</a></li>
+          <li><a href="#" class="hover:text-gray-900">Categories</a></li>
+          <li><a href="#" class="hover:text-gray-900">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">Information</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">Help Center</a></li>
+          <li><a href="#" class="hover:text-gray-900">Money Refund</a></li>
+          <li><a href="#" class="hover:text-gray-900">Shipping</a></li>
+          <li><a href="#" class="hover:text-gray-900">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">For users</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">Login</a></li>
+          <li><a href="#" class="hover:text-gray-900">Register</a></li>
+          <li><a href="#" class="hover:text-gray-900">Settings</a></li>
+          <li><a href="#" class="hover:text-gray-900">My Orders</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">Get app</h3>
+        <div class="space-y-2">
+          <a href="#" class="block"><img src="assets/Layout/Misc/market-button.png" alt="App Store"></a>
+          <a href="#" class="block"><img src="assets/Layout/Misc/Group.png" alt="Google Play"></a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-900 text-white py-6 text-center text-sm">
+      © 2023 Ecommerce. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
