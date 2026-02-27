@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand - My Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-6">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+      </a>
+
+      <form class="flex-1 max-w-xl hidden md:flex rounded-2xl overflow-hidden border-2 border-blue-600">
+        <input type="text" placeholder="Search" class="flex-1 px-6 py-4 focus:outline-none">
+        <select class="px-6 py-4 bg-white border-l-2 border-blue-600">
+          <option>All category</option>
+        </select>
+        <button class="bg-blue-600 text-white px-10 font-semibold">Search</button>
+      </form>
+
+      <div class="flex items-center gap-6 md:gap-8 text-gray-600">
+        <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+        <button id="profile-toggle" class="flex flex-col items-center hover:text-blue-600">
+           <i class="far fa-user text-2xl"></i>
+           <span class="text-xs mt-1">Profile</span>
+        </button>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600 relative">
+          <i class="far fa-envelope text-2xl"></i>
+          <span class="text-xs mt-1">Message</span>
+          <span class="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">3</span>
+        </a>
+        <a href="#" class="flex flex-col items-center hover:text-blue-600">
+          <i class="far fa-file-lines text-2xl"></i>
+          <span class="text-xs mt-1">Orders</span>
+        </a>
+        <a href="cart.html" class="flex flex-col items-center hover:text-blue-600 relative">
+          <i class="fas fa-cart-shopping text-2xl"></i>
+          <span class="text-xs mt-1">My cart</span>
+          <span id="cart-count" class="absolute -top-1 -right-2 bg-green-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">3</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-8">
+    <h1 class="text-3xl font-bold mb-8">My cart (<span id="cart-count-top">3</span>)</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <!-- Cart Items -->
+      <div class="lg:col-span-2 space-y-6" id="cart-items">
+
+      </div>
+
+      <!-- Order Summary -->
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-2xl shadow p-6 sticky top-8">
+          <h3 class="font-semibold mb-4">Have a coupon?</h3>
+          <div class="flex gap-2 mb-6">
+            <input type="text" id="coupon-input" placeholder="Enter coupon code" 
+                   class="flex-1 border rounded-lg px-4 py-3 focus:outline-none">
+            <button onclick="applyCoupon()" 
+                    class="bg-blue-600 text-white px-6 rounded-lg font-medium">Apply</button>
+          </div>
+
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between"><span>Subtotal</span><span id="subtotal">$1403.97</span></div>
+            <div class="flex justify-between text-green-600"><span>Discount</span><span id="discount">-$80.00</span></div>
+            <div class="flex justify-between"><span>Tax</span><span id="tax">+$14.00</span></div>
+            <hr>
+            <div class="flex justify-between font-bold text-lg">
+              <span>Total</span>
+              <span id="grand-total">$1337.97</span>
+            </div>
+          </div>
+
+          <button onclick="checkout()" 
+                  class="w-full bg-green-600 text-white py-4 rounded-xl font-bold text-lg mt-8 hover:bg-green-700 transition">
+            Checkout
+          </button>
+
+          <div class="flex justify-center gap-4 mt-6 text-2xl text-gray-400">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saved for Later -->
+    <div class="mt-16">
+      <h2 class="text-2xl font-bold mb-6">Saved for later</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="saved-items">
+
+      </div>
+    </div>
+
+    <!-- Super Discount Banner -->
+    <div class="mt-16 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-2xl p-8 text-center">
+      <h3 class="text-3xl font-bold mb-3">Super discount on more than 100 USD</h3>
+      <p class="mb-6">Have you ever finally just write dummy info</p>
+      <button class="bg-white text-blue-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100">
+        Shop now
+      </button>
+    </div>
+  </div>
+
+ <!-- Footer -->
+  <footer class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-12 grid grid-cols-2 md:grid-cols-6 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <a href="index.html" class="flex items-center gap-2 mb-4">
+          <img src="assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+        
+        </a>
+        <p class="text-gray-600 text-sm mb-6">Best information about the company gies here but now lorem ipsum is</p>
+        <div class="flex gap-4 text-xl">
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-blue-600"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">About</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">About Us</a></li>
+          <li><a href="#" class="hover:text-gray-900">Find store</a></li>
+          <li><a href="#" class="hover:text-gray-900">Categories</a></li>
+          <li><a href="#" class="hover:text-gray-900">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">Partnership</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">About Us</a></li>
+          <li><a href="#" class="hover:text-gray-900">Find store</a></li>
+          <li><a href="#" class="hover:text-gray-900">Categories</a></li>
+          <li><a href="#" class="hover:text-gray-900">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">Information</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">Help Center</a></li>
+          <li><a href="#" class="hover:text-gray-900">Money Refund</a></li>
+          <li><a href="#" class="hover:text-gray-900">Shipping</a></li>
+          <li><a href="#" class="hover:text-gray-900">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">For users</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-gray-900">Login</a></li>
+          <li><a href="#" class="hover:text-gray-900">Register</a></li>
+          <li><a href="#" class="hover:text-gray-900">Settings</a></li>
+          <li><a href="#" class="hover:text-gray-900">My Orders</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-4">Get app</h3>
+        <div class="space-y-2">
+          <a href="#" class="block"><img src="assets/Layout/Misc/market-button.png" alt="App Store"></a>
+          <a href="#" class="block"><img src="assets/Layout/Misc/Group.png" alt="Google Play"></a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-900 text-white py-6 text-center text-sm">
+      © 2023 Ecommerce. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- profile-sidebar-->
+   <!-- Overlay -->
+<div id="profile-overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"></div>
+
+<!-- Profile Sidebar -->
+<aside id="profile-sidebar" class="fixed top-0 left-0 w-80 h-full bg-gray-100 z-50 shadow-lg">
+
+  <!-- Close Button -->
+  <div class="flex justify-between items-center p-4 border-b">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
+      <div>
+        <p class="font-semibold">Sign in | Register</p>
+      </div>
+    </div>
+    <button id="profile-close" class="text-gray-600 text-xl">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Menu -->
+  <nav class="p-4 space-y-4 text-gray-700">
+
+    <a href="#" class="flex items-center gap-3 hover:text-blue-600">
+      <i class="fas fa-home"></i> Home
+    </a>
+
+    <a href="#" class="flex items-center gap-3 hover:text-blue-600">
+      <i class="fas fa-list"></i> Categories
+    </a>
+
+    <a href="#" class="flex items-center gap-3 hover:text-blue-600">
+      <i class="far fa-heart"></i> Favorites
+    </a>
+
+    <a href="#" class="flex items-center gap-3 hover:text-blue-600">
+      <i class="far fa-file-lines"></i> My orders
+    </a>
+
+    <hr>
+
+    <a href="#" class="flex items-center gap-3 hover:text-blue-600">
+      <i class="fas fa-globe"></i> English | USD
+    </a>
+
+    <a href="#" class="flex items-center gap-3 hover:text-blue-600">
+      <i class="fas fa-headset"></i> Contact us
+    </a>
+
+    <a href="#" class="flex items-center gap-3 hover:text-blue-600">
+      <i class="fas fa-building"></i> About
+    </a>
+
+    <hr>
+
+    <a href="#" class="block hover:text-blue-600">User agreement</a>
+    <a href="#" class="block hover:text-blue-600">Partnership</a>
+    <a href="#" class="block hover:text-blue-600">Privacy policy</a>
+
+  </nav>
+</aside>
+  <script>
+    // ================= CART DATA =================
+    let cart = [
+      {
+        id: 1,
+        name: "T-shirts with multiple colors, for men and lady",
+        size: "Size: medium, Color: blue, Material: Plastic",
+        seller: "Artel Market",
+        price: 78.99,
+        qty: 9,
+        img: "assets/Layout/alibaba/Image/cloth/Bitmap.png"
+      },
+      {
+        id: 2,
+        name: "T-shirts with multiple colors, for men and lady",
+        size: "Size: medium, Color: blue, Material: Plastic",
+        seller: "Best factory LLC",
+        price: 39.00,
+        qty: 3,
+        img: "assets/Layout/alibaba/Image/cloth/Bitmap (2).png"
+      },
+      {
+        id: 3,
+        name: "T-shirts with multiple colors, for men and lady",
+        size: "Size: medium, Color: blue, Material: Plastic",
+        seller: "Artel Market",
+        price: 170.50,
+        qty: 1,
+        img: "assets/Layout/alibaba/Image/cloth/2 1.png"
+      }
+    ];
+
+    let saved = [
+      { id: 101, name: "GoPro HERO8 4K Action Camera - Black", price: 398.50, img: "assets/Image/tech/6.png" },
+      { id: 102, name: "GoPro HERO8 4K Action Camera - Black", price: 399.50, img: "assets/Image/tech/image 34.png" },
+      { id: 103, name: "GoPro HERO8 4K Action Camera - Black", price: 398.50, img: "assets/Image/tech/image 29.png" },
+      { id: 104, name: "GoPro HERO8 4K Action Camera - Black", price: 398.50, img: "assets/Image/tech/image 23.png" }
+    ];
+
+    let couponDiscount = 0;
+
+    // ================= RENDER FUNCTIONS =================
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      container.innerHTML = '';
+
+      cart.forEach((item, index) => {
+        const subtotal = (item.price * item.qty).toFixed(2);
+        container.innerHTML += `
+          <div class="bg-white rounded-2xl p-6 flex gap-6">
+            <img src="${item.img}" class="w-28 h-28 object-contain">
+            <div class="flex-1">
+              <p class="font-medium">${item.name}</p>
+              <p class="text-sm text-gray-600 mt-1">${item.size}</p>
+              <p class="text-sm text-gray-500">Seller: ${item.seller}</p>
+              
+              <div class="flex items-center gap-6 mt-4">
+                <div>
+                  <span class="font-bold text-xl">$${item.price}</span>
+                </div>
+                <select onchange="changeQty(${index}, this.value)" class="border rounded px-3 py-1">
+                  ${[1,2,3,4,5,6,7,8,9,10].map(n => 
+                    `<option value="${n}" ${n===item.qty?'selected':''}>${n}</option>`
+                  ).join('')}
+                </select>
+              </div>
+
+              <div class="mt-4 flex gap-6 text-blue-600 text-sm">
+                <button onclick="removeFromCart(${index})" class="hover:underline">Remove</button>
+                <button onclick="moveToSaved(${index})" class="hover:underline">Save for later</button>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-xl">$${subtotal}</p>
+            </div>
+          </div>`;
+      });
+
+      updateTotals();
+    }
+
+    function renderSaved() {
+      const container = document.getElementById('saved-items');
+      container.innerHTML = '';
+
+      saved.forEach((item, index) => {
+        container.innerHTML += `
+          <div class="bg-white rounded-2xl p-4 shadow hover:shadow-lg transition">
+            <img src="${item.img}" class="w-full h-40 object-contain mx-auto">
+            <p class="font-medium text-sm mt-4 text-center">${item.name}</p>
+            <p class="text-center font-bold text-xl mt-1">$${item.price}</p>
+            <button onclick="moveToCartFromSaved(${index})" 
+                    class="w-full mt-4 bg-blue-600 text-white py-2 rounded-xl text-sm font-medium">
+              Move to cart
+            </button>
+          </div>`;
+      });
+    }
+
+    function updateTotals() {
+      let subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      let discount = couponDiscount || 0;
+      let tax = subtotal * 0.01; // 1% tax example
+      let total = subtotal - discount + tax;
+
+      document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+      document.getElementById('discount').textContent = discount ? '-$' + discount.toFixed(2) : '$0.00';
+      document.getElementById('tax').textContent = '+$' + tax.toFixed(2);
+      document.getElementById('grand-total').textContent = '$' + total.toFixed(2);
+
+      // Update cart count
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById('cart-count').textContent = count;
+      document.getElementById('cart-count-top').textContent = count;
+    }
+
+    // ================= CART FUNCTIONS =================
+    function changeQty(index, newQty) {
+      cart[index].qty = parseInt(newQty);
+      renderCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function moveToSaved(index) {
+      saved.push(cart[index]);
+      cart.splice(index, 1);
+      renderCart();
+      renderSaved();
+    }
+
+    function moveToCartFromSaved(index) {
+      cart.push(saved[index]);
+      saved.splice(index, 1);
+      renderCart();
+      renderSaved();
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+      if (code === "SAVE10") {
+        couponDiscount = 80; // example discount
+        alert("Coupon applied! $80 discount");
+      } else {
+        alert("Invalid coupon code");
+        couponDiscount = 0;
+      }
+      updateTotals();
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+      alert("Thank you for your purchase! (Demo checkout successful)");
+      cart = [];
+      renderCart();
+    }
+
+    // ================= INIT =================
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCart();
+      renderSaved();
+    });
+  </script>
+</body>
+</html>
